@@ -1,0 +1,159 @@
+<p>new-registration works!</p>
+
+<div class="container">
+    <div class="form-heading">
+        <p>FRESH STUDENT REGISTRATION FORM</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="registration-form">
+   
+       <!-- state and district -->
+        <div class="mb-3 row">
+            <!-- state of domicile -->
+            <label class="col-sm-2 view-field">STATE OF DOMICILE:</label>
+            <div class="col-sm-3">
+                <select class="form-select" aria-label="Default select example" formControlName="domicile">
+                    <option value="">select</option>
+                    <option value="one">One</option>
+                    <option value="two">Two</option>
+                </select>
+            </div>
+
+            <!-- district -->
+            <label class="col-sm-1 view-field">DISTRICT:</label>
+            <div class="col-sm-3">
+                <select class="form-select" aria-label="Default select example" formControlName="district">
+                    <option selected value="">select</option>
+                    <option value="maharasta">Maharasta</option>
+                </select>
+            </div>
+        </div>
+   
+        
+        <!-- name & dob -->
+        <div class="mb-3 row">
+            <!-- name -->
+            <label for="inputPassword" class="col-sm-2 view-field">FIRST NAME:</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="name" formControlName="firstName" required>
+               <span *ngif="registerForm.get('firstName').touched && registerForm.get('firstName').hasError('required')">Name is Required.</span>
+            </div>
+        
+            <!-- DOB -->
+            <label for="inputPassword" class="col-sm-1 view-field">DOB:</label>
+            <div class="col-sm-3">
+                <input id="dateOfBirth" name="dateOfBirth" type="date" formControlName="dob">
+            </div>
+        </div>
+
+        <!-- gender & mobile -->
+        <div class="mb-3 row">
+            <!-- gender -->
+            <label for="inputPassword" class="col-sm-2 view-field">GENDER:</label>
+            <div class="col-sm-3">
+                <select class="form-select" aria-label="Default select example" formControlName="gender">
+                    <option value="">select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <!-- mobile number -->
+            <label for="inputPassword" class="col-sm-1 view-field">MOBILE:</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="mobile" formControlName="mobile" required>
+                <span *ngif="registerForm.get('mobile').touched && registerForm.get('mobile').hasError('required')">Mobile is Required.</span>
+            </div>
+        </div>
+
+        <!-- email -->
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 view-field">EMAIL:</label>
+            <div class="col-sm-4">
+                <input type="email" class="form-control" id="email" formControlName="email" required>
+                <span *ngif="registerForm.get('email').touched && registerForm.get('email').hasError('required')">Email is Required.</span>
+
+            </div>
+        </div>
+
+        <!-- institute & aadhar -->
+        <div class="mb-3 row">
+            <!-- institute code -->
+            <label for="inputPassword" class="col-sm-2 view-field">INSTITUTE CODE:</label>
+            <div class="col-sm-3">
+                <input type="email" class="form-control" id="instituteCode" formControlName="instituteCode" required>
+                 <span *ngif="registerForm.get('instituteCode').touched && registerForm.get('instituteCode').hasError('required')">Institute Code is Required.</span>
+
+            </div>
+
+            <!-- aadhar number -->
+            <label for="inputPassword" class="col-sm-1 view-field">AADHAR NUMBER:</label>
+            <div class="col-sm-3">
+                <input type="email" class="form-control" id="aadharNumber" formControlName="aadharNumber" required>
+                <span *ngif="registerForm.get('aadharNumber').touched && registerForm.get('aadharNumber').hasError('required')">Aadhar Number is Required.</span>
+            </div>
+        </div>
+
+        <!-- Bank -->
+        <div class="mb-3 row">
+            <!-- Ifsc code -->
+            <label for="inputPassword" class="col-sm-2 view-field">BANK IFSC CODE:</label>
+            <div class="col-sm-3">
+                <input type="email" class="form-control" id="ifscCode" formControlName="ifscCode" required>
+                <span *ngif="registerForm.get('ifscCode').touched && registerForm.get('ifscCode').hasError('required')">IFSC Code is Required.</span>
+
+            </div>
+
+            <!-- account number -->
+            <label for="inputPassword" class="col-sm-1 view-field">BANK ACCOUNT NUMBER:</label>
+            <div class="col-sm-3">
+                <input type="email" class="form-control" id="accountNumber" formControlName="accountNumber" required>
+                <span *ngif="registerForm.get('accountNumber').touched && registerForm.get('accountNumber').hasError('required')">Account Number is Required.</span>
+
+            </div>
+        </div>
+
+        <!-- Bank Name -->
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 view-field">BANK NAME:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="bankname" formControlName="bankName" required>
+                <span *ngif="registerForm.get('bankName').touched && registerForm.get('bankName').hasError('required')">Bank Name is Required.</span>
+
+            </div>
+        </div>
+
+        <!-- set password -->
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 view-field">SET YOUR PASSWORD:</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" id="inputPassword" formControlName="setPassword" required>
+                <span *ngif="registerForm.get('setPassword').touched && registerForm.get('setPassword').hasError('required')">Set Password</span>
+
+            </div>
+        </div>
+
+        <!-- confirm password -->
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 view-field">CONFIRM PASSWORD:</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" id="inputPassword" formControlName="confirmPassword" required>
+                <span *ngif="registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').hasError('required')">Confirm Password</span>
+            </div>
+        </div>
+
+        <!-- check box -->
+        <div class="mb-3 form-check">
+            <input type="checkbox" id="termsConditions" formControlName="agree">
+            <label class="view-field">ALL THE ABOVE INFORMATION FURNISHED BY ME IS TRUE TO THE BEST OF MY KNOWLEDGE</label>
+        </div>
+
+        <div class="button-row">
+            <!-- <button type="submit" [disabled] = "!registerForm.valid">REGISTER</button> -->
+            <button type="submit" routerLink="/register-sucsess" target="_blank">REGISTER</button>
+            <button type="reset" (click)="reset()">RESET</button>
+        </div>
+        
+        
+</form>
+</div>
